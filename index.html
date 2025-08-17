@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Marry Me?</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff5f5;
+      color: #4a1c1c;
+    }
+    .dancing-script { font-family: 'Dancing Script', cursive; }
+    .heart {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background-color: #f87171;
+      transform: rotate(45deg);
+      animation: float 6s ease-in-out infinite;
+    }
+    .heart:before, .heart:after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background-color: #f87171;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .heart:before { top: -8px; left: 0; }
+    .heart:after { left: -8px; top: 0; }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-800px) rotate(45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-6">
+  
+  <!-- Title -->
+  <h1 class="text-5xl font-bold dancing-script text-red-500 mb-6">Will You Marry Me? ❤️</h1>
+  
+  <!-- Your Friend's Photo -->
+  <div class="w-full max-w-md mb-6">
+    <img src="/New folder/IMG-20250817-WA0033.jpg" alt="My Love" class="rounded-2xl shadow-lg w-full">
+  </div>
+
+  <!-- Proposal Message -->
+  <p class="text-lg text-center mb-6">
+    From the moment I met you, my life has been filled with love, joy, and magic.  
+    You’re the one I want to spend forever with. 💍✨
+  </p>
+
+  <!-- Proposal Button -->
+  <button onclick="alert('She said YES! 🎉❤️')" 
+    class="bg-red-500 text-white px-6 py-3 rounded-full text-lg hover:bg-red-600 transition">
+    Say Yes 💕
+  </button>
+
+  <!-- Floating hearts -->
+  <script>
+    for(let i=0; i<20; i++) {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (4 + Math.random() * 6) + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+  </html>
